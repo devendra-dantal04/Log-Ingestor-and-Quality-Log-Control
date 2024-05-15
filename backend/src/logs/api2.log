@@ -1,0 +1,4 @@
+{"level":"info","log_string":"Request to fetch user repositories","timestamp":"2024-05-15T10:02:14.534Z","metadata":{"source":"api2.log","request_data":{"method":"GET","url":"/api2/repos","username":"devendra-dantal04"}}}
+{"level":"success","log_string":"User repositories fetched successfully","timestamp":"2024-05-15T10:02:17.726Z","metadata":{"source":"api2.log","request_data":{"method":"GET","url":"/api2/repos","username":"devendra-dantal04"}}}
+{"level":"info","log_string":"Request to fetch user repositories","timestamp":"2024-05-15T10:03:11.629Z","metadata":{"source":"api2.log","request_data":{"method":"GET","url":"/api2/repos","username":"devendra-dantal0"}}}
+{"level":"error","log_string":"Failed to fetch user repositories.","timestamp":"2024-05-15T10:03:12.433Z","metadata":{"source":"api2.log","request_data":{"method":"GET","url":"/api2/repos","username":"devendra-dantal0"}}}

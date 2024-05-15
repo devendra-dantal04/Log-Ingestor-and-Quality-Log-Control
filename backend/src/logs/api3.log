@@ -1,0 +1,2 @@
+{"level":"info","log_string":"Request to fetch current Bitcoin price","timestamp":"2024-05-15T10:17:56.685Z","metadata":{"source":"api3.log","request_data":{"method":"GET","url":"/api3/price"}}}
+{"level":"success","log_string":"Current Bitcoin price fetched successfully","timestamp":"2024-05-15T10:17:58.438Z","metadata":{"source":"api3.log","request_data":{"method":"GET","url":"/api3/price"}}}
