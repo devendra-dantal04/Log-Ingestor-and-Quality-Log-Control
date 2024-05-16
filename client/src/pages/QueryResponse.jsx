@@ -88,7 +88,7 @@ function QueryResponse() {
     fetchLogs();
   }, []);
   return (
-    <>
+    <div className="min-h-[100vh] h-full">
       <RequestToolbar />
       <DataToolbar
         handleFilterChange={handleFilterChange}
@@ -99,7 +99,7 @@ function QueryResponse() {
         data={filters.logString === "" ? logsData : filteredLogs}
         columns={logColumns}
       />
-    </>
+    </div>
   );
 }
 
