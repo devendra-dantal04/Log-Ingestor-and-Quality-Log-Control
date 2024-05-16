@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { DataTable } from "@/components/ui/data-table";
 import DataToolbar from "@/components/DataToolbar";
 import { useToast } from "@/components/ui/use-toast";
+import RequestToolbar from "@/components/RequestToolbar";
 
 const logColumns = [
   {
@@ -57,7 +58,11 @@ function QueryResponse() {
   const fetchLogs = async () => {
     try {
       const logs = await fetch(
-        `http://localhost:5000/logs?level=${filters.level}&q=${filters.logString}&source=${filters.source}&startTime=${filters.startTimestamp}&endTime=${filters.endTimestamp}`
+        `${import.meta.env.VITE_SERVER_URL}/logs?level=${filters.level}&q=${
+          filters.logString
+        }&source=${filters.source}&startTime=${
+          filters.startTimestamp
+        }&endTime=${filters.endTimestamp}`
       );
 
       const res = await logs.json();
@@ -68,7 +73,7 @@ function QueryResponse() {
           description: "Successfully fetched the logs for given query",
         });
 
-        setLogsData(res.logs);
+        setLogsData(res.logs.reverse());
       }
     } catch (error) {
       toast({
@@ -84,6 +89,7 @@ function QueryResponse() {
   }, []);
   return (
     <>
+      <RequestToolbar />
       <DataToolbar
         handleFilterChange={handleFilterChange}
         fetchLogs={fetchLogs}

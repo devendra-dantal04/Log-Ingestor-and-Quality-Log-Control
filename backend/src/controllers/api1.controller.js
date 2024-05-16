@@ -9,6 +9,17 @@ const loginUser = async (req, res) => {
     url: req.url,
   };
 
+  let userData = {
+    email: "eve.holt@reqres.in",
+    password: "cityslicka",
+  };
+
+  if (req.query.type === "unsuccessful") {
+    userData = {
+      email: "peter@klaven",
+    };
+  }
+
   try {
     logger.info("api1", "Request to log in user", requestData); // Log the incoming request
 
@@ -17,9 +28,7 @@ const loginUser = async (req, res) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        email: "peter@klaven",
-      }),
+      body: JSON.stringify(userData),
     });
 
     if (!response.ok) {

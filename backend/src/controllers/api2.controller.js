@@ -2,13 +2,12 @@ const LogIngestor = require("../utils/logIngestor");
 
 const logger = new LogIngestor();
 const BASE_URL = "https://api.github.com";
-const username = "devendra-dantal0";
 
 const getUserRepositories = async (req, res) => {
   const requestData = {
     method: req.method,
     url: req.url,
-    username: username,
+    username: req.query.username,
   };
 
   try {
