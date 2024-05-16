@@ -14,13 +14,16 @@ const getUserRepositories = async (req, res) => {
     console.log("Hello");
     logger.info("api2", "Request to fetch user repositories", requestData);
 
-    const response = await fetch(`${BASE_URL}/users/${username}/repos`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authentication: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
-      },
-    });
+    const response = await fetch(
+      `${BASE_URL}/users/${req.query.username}/repos`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authentication: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+        },
+      }
+    );
 
     if (!response.ok) {
       const errorMessage = `Failed to fetch user repositories.`;
