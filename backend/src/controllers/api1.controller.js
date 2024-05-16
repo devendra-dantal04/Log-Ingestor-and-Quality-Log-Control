@@ -20,6 +20,8 @@ const loginUser = async (req, res) => {
     };
   }
 
+  console.log(userData);
+
   try {
     logger.info("api1", "Request to log in user", requestData); // Log the incoming request
 
@@ -31,7 +33,7 @@ const loginUser = async (req, res) => {
       body: JSON.stringify(userData),
     });
 
-    if (!response.ok) {
+    if (req.query.type === "unsuccessful") {
       const errorMessage = `Failed to log in user.`;
       // Log error if login fails
       logger.error("api1", errorMessage, requestData);
